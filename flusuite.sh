@@ -1,5 +1,22 @@
 #!/bin/bash
 
+#Put on some ASCII ART
+print("""
+      ___                         ___                    ___           ___                                     ___     
+     /\__\                       /\  \                  /\__\         /\  \                                   /\__\    
+    /:/ _/_                      \:\  \                /:/ _/_        \:\  \       ___           ___         /:/ _/_   
+   /:/ /\__\                      \:\  \              /:/ /\  \        \:\  \     /\__\         /\__\       /:/ /\__\  
+  /:/ /:/  /    ___     ___   ___  \:\  \            /:/ /::\  \   ___  \:\  \   /:/__/        /:/  /      /:/ /:/ _/_ 
+ /:/_/:/  /    /\  \   /\__\ /\  \  \:\__\          /:/_/:/\:\__\ /\  \  \:\__\ /::\  \       /:/__/      /:/_/:/ /\__\
+ \:\/:/  /     \:\  \ /:/  / \:\  \ /:/  /          \:\/:/ /:/  / \:\  \ /:/  / \/\:\  \__   /::\  \      \:\/:/ /:/  /
+  \::/__/       \:\  /:/  /   \:\  /:/  /            \::/ /:/  /   \:\  /:/  /   ~~\:\/\__\ /:/\:\  \      \::/_/:/  / 
+   \:\  \        \:\/:/  /     \:\/:/  /              \/_/:/  /     \:\/:/  /       \::/  / \/__\:\  \      \:\/:/  /  
+    \:\__\        \::/  /       \::/  /                 /:/  /       \::/  /        /:/  /       \:\__\      \::/  /   
+     \/__/         \/__/         \/__/                  \/__/         \/__/         \/__/         \/__/       \/__/    
+SUPER UNSTABLE AND KIND OF CLUNKY
+(art from http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+""")
+
 #Check that scripts are installed
 if [ ! -f "../genbankdl/genbankdl.py" ]; then echo "The File Does Not Exist"; exit; fi
 if [ ! -f "../irdformatter/irdformatter_py3.py" ]; then echo "The File Does Not Exist"; exit; fi

@@ -4,15 +4,15 @@
 #Consider adding to path
 
 #Check if folders exist, then pull
-if [ ! -e "flusuite" ]; then 
+if [ ! -d "flusite" ]; then 
 	echo -e "\e[92mDownloading Flusuite Wrapper" 
 	git clone https://github.com/mazeller/flusuite.git
 fi
-if [ ! -e "genbankdl" ]; then 
+if [ ! -d "genbankdl" ]; then 
 	echo -e "\e[92mDownloading Genbank Downloader" 
 	git clone https://github.com/mazeller/genbankdl.git
 fi
-if [ ! -e "irdformatter" ]; then 
+if [ ! -d "irdformatter" ]; then 
 	echo -e "\e[92mDownloading IRD Formatter" 
 	git clone https://github.com/mazeller/irdformatter.git
 fi
