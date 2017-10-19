@@ -4,18 +4,18 @@
 #Consider adding to path
 
 #Check if folders exist, then pull
-if [ ! -d "flusite" ]; then 
-	echo -e "\e[92mDownloading Flusuite Wrapper" 
-	git clone https://github.com/mazeller/flusuite.git
-fi
-if [ ! -d "genbankdl" ]; then 
-	echo -e "\e[92mDownloading Genbank Downloader" 
-	git clone https://github.com/mazeller/genbankdl.git
-fi
-if [ ! -d "irdformatter" ]; then 
-	echo -e "\e[92mDownloading IRD Formatter" 
-	git clone https://github.com/mazeller/irdformatter.git
-fi
+#if [ ! -d "flusite" ]; then 
+#	echo -e "\e[92mDownloading Flusuite Wrapper" 
+#	git clone https://github.com/mazeller/flusuite.git
+#fi
+#if [ ! -d "genbankdl" ]; then 
+#	echo -e "\e[92mDownloading Genbank Downloader" 
+#	git clone https://github.com/mazeller/genbankdl.git
+#fi
+#if [ ! -d "irdformatter" ]; then 
+#	echo -e "\e[92mDownloading IRD Formatter" 
+#	git clone https://github.com/mazeller/irdformatter.git
+#fi
 
 #Install Dependencies locally to python2.7
 echo -e "\e[92mInstalling openpyxl"
