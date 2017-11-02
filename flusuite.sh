@@ -1,14 +1,8 @@
-#!/bin/bash
-
-#Put on some ASCII ART
-
-#Check that scripts are installed
-if [ ! -f "genbankdl.py" ]; then echo "The genbankdl.py Does Not Exist"; exit; fi
-if [ ! -f "irdformatter_py3.py" ]; then echo "The irdformatter_py3.py Does Not Exist"; exit; fi
+#! /usr/bin/env bash
 
 #Process the genbank data (needs alignment)
 echo -e "\e[92mPulling data directly from genbank"
-/usr/bin/python2.7 genbankdl.py -d
+python genbankdl.py -d
 
 #Analyze the downloaded data
 echo -e "\e[92mProcessing Data"

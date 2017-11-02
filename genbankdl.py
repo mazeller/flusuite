@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 # -*- coding: utf-8 -*-
 #Written for Python 2.7
 """
@@ -74,6 +76,7 @@ def main():
         	for line in f:
 			#Hunt for header lines
 			if(line[0] == '>'):
+                                #if(re.match("^>.+\|hemagglutinin\[.+/swine/.+H3",line.lower())):    #JC: REGEX to match the hemagglutinin swine H3 lines
 				#This structure is positioned to not execute till after a full sequence has been filled
 				if(len(subheaderInfo) >= 4):
 					if(subheaderInfo[0] == 'hemagglutinin') and (subheaderInfo[3][0:2] == "H3"):
@@ -88,6 +91,7 @@ def main():
 				sequence = ''
 				headerInfo = line.split('|')
 				subheaderInfo = headerInfo[4].replace('[','(').replace(')','(').replace(']','(').split('(')	#Replace with REGEX
+                                # subheaderInfo = re.sub("[\[\])]",'(',headerInfo[4])                                           #JC: the REGEX
 			elif(line[0] == '\n'):
 				x=1
 			else:

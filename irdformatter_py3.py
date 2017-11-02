@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#! /usr/bin/env python
 
 #for Python3
 #DEPENDS ON OPENPYXL!
@@ -46,22 +46,6 @@ USAGE: python irdformatter.py -i inputfile [-n]
 
 #Predefine all our colors in one place
 clusters = {
-    #’turkey':['NHNNYR'],
-    #’purple':['KHHNYR','KHKNYS'],
-    #’gray':['KTHKYS','NTHNFK','NTQKFN','NTHKFN'],
-    #’darkgray':['KTHNFK','KTHNSK'],
-    #’lightpink':['KHQKYR'],
-    #’gold':['KYNNNK'],
-    #’red':['NYNNYK','NYNNHK','NHNNYK','NYHNYK'],
-    #’darkpink':['KHKNYR'],
-    #’cyan':['NNNDYR', 'NHSNYR', 'NHNNYR', 'NHNDYR'],
-    #’brown':['NYHGHE'],
-    #’darkgreen':['KYKNYE'],
-    #’lightgreen':['KYNNYK'],
-    #’orange':['KHKNYE'],
-    #’blue':['KHNNYK'],
-    #’lightblue':['KHKEYS','KHHNYR']
-
     'turkey':['NHNNYR'],
     'purple':['KHHNYR','KHKNYS'],
     'gray':['KTHKYS','NTHNFK','NTQKFN','NTHKFN', 'KHKEYS'],
