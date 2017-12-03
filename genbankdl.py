@@ -76,30 +76,26 @@ def main():
         	for line in f:
 			#Hunt for header lines
 			if(line[0] == '>'):
-                                #if(re.match("^>.+\|hemagglutinin\[.+/swine/.+H3",line.lower())):    #JC: REGEX to match the hemagglutinin swine H3 lines
+                                #if(re.match("^>.+\|hemagglutinin\[.+/swine/.+H3",line.lower())): #JC: alt. REGEX to match the hemagglutinin swine H3 lines
+                                # JC: could make this general purpose (H1, H3, etc)
 				#This structure is positioned to not execute till after a full sequence has been filled
-				if(len(subheaderInfo) >= 4):
-					if(subheaderInfo[0] == 'hemagglutinin') and (subheaderInfo[3][0:2] == "H3"):
-						#Check Species = Swine
-						localInfo = subheaderInfo[2].split('/')
-						if(localInfo[1].lower() == 'swine'):
-							#Check if is in US
-							if(localInfo[2].lower() in usastates):
-								#Store pertinent information
-								outputTSV.write("HA\t" + headerInfo[3] + "\t\t4\t\t" + subheaderInfo[3] + "\t" + localInfo[len(localInfo) - 1]+ "\tSwine\t\t" + localInfo[2]  + "\t\t" + subheaderInfo[2] + '\t' + sequence + '\n')
+				if(len(subheaderInfo) >= 4) and (subheaderInfo[0] == 'hemagglutinin') and (subheaderInfo[3][0:2] == "H3"):
+					#Check Species = Swine, check if is in US
+					localInfo = subheaderInfo[2].split('/')
+					if(localInfo[1].lower() == 'swine') and (localInfo[2].lower() in usastates):
+						#Store pertinent information
+						outputTSV.write("HA\t" + headerInfo[3] + "\t\t4\t\t" + subheaderInfo[3] + "\t" + localInfo[len(localInfo) - 1]+ "\tSwine\t\t" + localInfo[2]  + "\t\t" + subheaderInfo[2] + '\t' + sequence + '\n')
+
 				#Blank variables
 				sequence = ''
 				headerInfo = line.split('|')
-				subheaderInfo = headerInfo[4].replace('[','(').replace(')','(').replace(']','(').split('(')	#Replace with REGEX
-                                # subheaderInfo = re.sub("[\[\])]",'(',headerInfo[4])                                           #JC: the REGEX
+                                subheaderInfo = re.sub("[\[\])]",'(',headerInfo[4]).split('(')       #JC:the REGEX
 			elif(line[0] == '\n'):
 				x=1
 			else:
 				sequence = sequence + line.rstrip()
-	
+
 	#Close files
 	f.close()
 	outputTSV.close()
-	
-
 if __name__ == "__main__": main()
