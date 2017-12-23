@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/usr/bin/python
 
 #for Python3
 #DEPENDS ON OPENPYXL!
